@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Final_Project_JS_Home</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="headerOne">
+      <button onclick="goHome()"><i class="fa-solid fa-house"></i></button>
+      <div class="cartMenu">
+        <button onclick="goToCart()">
+          <i class="fa-solid fa-cart-shopping"></i>
+        </button>
+        <button id="menuBtn" onclick="showHide()">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </header>
+    <div class="overlay" onclick="showHide()"></div>
+    <nav id="smallNav">
+      <div class="smallNavBtn">
+        <h1>Categories</h1>
+        <button onclick="showHide()"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div id="smallCategories">
+        <button class="nav-btn" onclick="getAll(this)">All</button>
+        <button class="nav-btn" onclick="getByCategory(`Salads`, this)">
+          Salads
+        </button>
+        <button class="nav-btn" onclick="getByCategory(`Soups`, this)">
+          Soups
+        </button>
+        <button class="nav-btn" onclick="getByCategory(`Chicken-Dishes`, this)">
+          Chiked-Dishes
+        </button>
+        <button class="nav-btn" onclick="getByCategory(`Beef-Dishes`, this)">
+          Beef-Dishes
+        </button>
+        <button class="nav-btn" onclick="getByCategory(`Seafood-Dishes`, this)">
+          Seafood-Dishes
+        </button>
+        <button
+          class="nav-btn"
+          onclick="getByCategory(`Vegetable-Dishes`, this)"
+        >
+          Vegtable-Dishes
+        </button>
+        <button class="nav-btn" onclick="getByCategory(`Bits&Bites`, this)">
+          Bits&Bites
+        </button>
+        <button class="nav-btn" onclick="getByCategory(`On-The-Side`, this)">
+          On-The-Side
+        </button>
+      </div>
+    </nav>
+
+    <nav id="navOne">
+      <h1>Categories</h1>
+      <div class="categories">
+        <button class="nav-btn" onclick="getAll(this)">All</button>
+        <button class="nav-btn" onclick="getByCategory(`Salads`, this)">
+          Salads
+        </button>
+        <button class="nav-btn" onclick="getByCategory(`Soups`, this)">
+          Soups
+        </button>
+        <button class="nav-btn" onclick="getByCategory(`Chicken-Dishes`, this)">
+          Chiked-Dishes
+        </button>
+        <button class="nav-btn" onclick="getByCategory(`Beef-Dishes`, this)">
+          Beef-Dishes
+        </button>
+        <button class="nav-btn" onclick="getByCategory(`Seafood-Dishes`, this)">
+          Seafood-Dishes
+        </button>
+        <button
+          class="nav-btn"
+          onclick="getByCategory(`Vegetable-Dishes`, this)"
+        >
+          Vegtable-Dishes
+        </button>
+        <button class="nav-btn" onclick="getByCategory(`Bits&Bites`, this)">
+          Bits&Bites
+        </button>
+        <button class="nav-btn" onclick="getByCategory(`On-The-Side`, this)">
+          On-The-Side
+        </button>
+      </div>
+    </nav>
+    <section id="filterSec">
+      <h1>Filter</h1>
+      <div class="insdieFilt">
+        <div class="spiciness">
+          <h3>
+            Spiciness: <label for="rangeSlider" id="sliderValue">All</label>
+          </h3>
+          <input
+            oninput="move(event)"
+            id="rangeSlider"
+            type="range"
+            min="-1"
+            max="4"
+            step="1"
+            value="-1"
+          />
+        </div>
+
+        <div class="filteNutsVegeterian">
+          <div class="nuts">
+            <input
+              onchange="noNuts()"
+              type="checkbox"
+              id="checkNuts"
+              value="1"
+            />
+            <p>No Nuts</p>
+          </div>
+          <div class="vegeterian">
+            <input
+              onchange="noVegeterian()"
+              type="checkbox"
+              id="checkVegeterian"
+              value="1"
+            />
+            <p>Vegeterian Only</p>
+          </div>
+        </div>
+        <select onchange="getSelectorId(this.value)" id="selector">
+          <option value="0" disabled selected><p>Categories</p></option>
+          <option value="1"><p>Salads</p></option>
+          <option value="2"><p>Soups</p></option>
+          <option value="3"><p>Chicken-Dishes</p></option>
+          <option value="4"><p>Beef-Dishes</p></option>
+          <option value="5"><p>Seafood-Dishes</p></option>
+          <option value="6"><p>Vegetable-Dishes</p></option>
+          <option value="7"><p>Bits&Bites</p></option>
+          <option value="8"><p>On-The-Side</p></option>
+          <option value="0"><p>All</p></option>
+        </select>
+        <button onclick="reset()">
+          <p>RESET</p>
+        </button>
+      </div>
+
+      <!-- <button onclick="apply()">APPLY FILTER</button> -->
+    </section>
+    <section id="HomesectionOne">
+      <!-- <div class="card">
+            <img src="" alt="">
+            <h1></h1>
+            <p></p>
+            <div class="buttons">
+                <button class="nuts">Nuts</button>
+                <button class="vegeterian">Vegeterian</button>
+            </div>
+            <div class="addToCart">
+                <h1></h1>
+                <button class="addBtn">Add to cart</button>
+            </div>
+        </div> -->
+    </section>
+
+    <script src="./main.js"></script>
+  </body>
+</html>

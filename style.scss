@@ -1,0 +1,670 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  button {
+    cursor: pointer;
+    p {
+      color: white;
+    }
+  }
+  // another font: -- font-family: "Figtree", serif;
+  h1 {
+    font-family: "Caveat", serif;
+    color: red;
+  }
+  p {
+    font-family: "Figtree", serif;
+    color: red;
+  }
+  h3 {
+    font-family: "Figtree", serif;
+    color: red;
+  }
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 1px solid red;
+  border-radius: 4px;
+  position: relative;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked::before {
+  content: "✔";
+  font-size: 16px;
+  color: red;
+  position: absolute;
+  left: 2px;
+  top: -3px;
+}
+
+input[type="range"] {
+  appearance: none;
+  // -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+  background: orange;
+  border-radius: 3px;
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 15px;
+  height: 15px;
+  background: red;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+select {
+  appearance: none;
+  background-color: orange;
+  // border: 2px solid red;
+  padding: 5px;
+  font-size: 16px;
+  border-radius: 5px;
+  color: red;
+  cursor: pointer;
+  width: 150px;
+
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='red'%3E%3Cpath d='M7 10l5 5 5-5H7z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 12px;
+}
+
+select option {
+  background: orange;
+  color: red;
+}
+
+select:focus {
+  outline: none;
+  border-color: red;
+}
+
+body {
+  padding: 0 30px;
+  background-image: url("https://img.freepik.com/free-vector/abstract-black-texture-background-hexagon_206725-413.jpg?t=st=1738756677~exp=1738760277~hmac=0e875c33dcc98502f5c4ee41f9f473b7fd152256adcd9bc270798067e3795ccf&w=1380");
+  // background-size: cover;
+  // background-position: center;
+  // background-repeat: no-repeat;
+}
+
+header,
+footer {
+  margin-left: -30px;
+  margin-right: -30px;
+  width: calc(100% + 60px);
+}
+
+.headerOne {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px;
+  height: 390px;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("https://t4.ftcdn.net/jpg/02/16/20/55/360_F_216205565_sBYz2HYy16qLkG0aoMQNNo5BAAiVXfEF.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  .cartMenu {
+    display: flex;
+  }
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    color: orange;
+    width: 50px;
+    height: 30px;
+    filter: brightness((100%));
+    transition: 0.5s;
+    i {
+      filter: brightness((100%));
+      font-size: 24px;
+      color: orange;
+      transition: 0.3s;
+    }
+  }
+  button:hover {
+    transform: translate(0, -3px);
+    filter: drop-shadow(0 0 10px red);
+  }
+}
+
+#menuBtn {
+  display: none;
+}
+
+#smallNav {
+  z-index: 99;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  right: -250px;
+  width: 250px;
+  height: 100%;
+  background: #333;
+  color: white;
+  padding: 20px;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.5);
+  transition: right 0.3s ease;
+  gap: 20px;
+  .smallNavBtn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: transparent;
+      border: none;
+      color: red;
+      width: 20px;
+      height: 20px;
+      filter: brightness((100%));
+      transition: 0.5s;
+      i {
+        filter: brightness((100%));
+        font-size: 24px;
+        color: red;
+        transition: 0.3s;
+      }
+    }
+    button:hover {
+      transform: translate(0, -3px);
+      filter: drop-shadow(0 0 10px red);
+    }
+  }
+  #smallCategories {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    button {
+      width: 150px;
+      height: 40px;
+      background-color: red;
+      color: white;
+      transition: 0.5s;
+      border-radius: 10px;
+      border: none;
+    }
+    button:hover {
+      transform: translate(0, -3px);
+      filter: drop-shadow(0 0 10px red);
+    }
+  }
+
+  // button {
+  //   width: 20px;
+  //   height: 20px;
+  //   background-color: red;
+  //   color: white;
+  //   transition: 0.5s;
+  //   // border-radius: 10px;
+  //   border: none;
+  // }
+  // button:hover {
+  //   transform: translate(0, -3px);
+  //   filter: drop-shadow(0 0 10px red);
+  // }
+}
+
+#smallNav.active {
+  right: 0;
+}
+
+#navOne {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  height: 120px;
+  // border: 2px solid black;
+  h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    font-size: 50px;
+    // border: 1px solid red;
+  }
+  .categories {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 50px;
+    // border: 1px solid blue;
+    .nav-btn {
+      position: relative;
+      height: 50px;
+      width: 100%;
+      border: 2px dashed red;
+      border-top: none;
+      border-bottom: none;
+      background-color: white;
+      // transition: background 0.3s;
+    }
+    .nav-btn::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 2px;
+      background: repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 5px,
+        #f13000 5px,
+        #f13000 10px
+      );
+      animation: move-line 2s linear infinite;
+      // animation: name duration timing-function delay iteration-count direction fill-mode;
+    }
+
+    @keyframes move-line {
+      from {
+        background-position: 0 0;
+      }
+      to {
+        background-position: 20px 0;
+      }
+    }
+
+    .nav-btn.active {
+      background-color: red;
+      color: white;
+    }
+  }
+}
+
+#filterSec {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-content: center;
+  margin-top: 20px;
+  width: 100%;
+  height: 270px;
+  // border: 2px solid black;
+  // gap: 20px;
+  h1 {
+    font-size: 50px;
+  }
+  button {
+    width: 130px;
+    height: 30px;
+    background-color: red;
+    color: white;
+    transition: 0.5s;
+    border-radius: 10px;
+    border: none;
+  }
+  button:hover {
+    transform: translate(0, -3px);
+    filter: drop-shadow(0 0 10px red);
+  }
+  .insdieFilt {
+    // border: 2px solid red;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 200px;
+    width: 180px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px red inset;
+    // width: 100%;
+    // gap: 10%;
+    .spiciness {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      // gap: 20px;
+      // width: 100%;
+    }
+    .filteNutsVegeterian {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      // gap: 20px;
+      // width: 100%;
+      .nuts {
+        display: flex;
+        gap: 10px;
+      }
+      .vegeterian {
+        display: flex;
+        gap: 10px;
+      }
+    }
+    #selector {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      // gap: 20px;
+      // width: 100%;
+    }
+  }
+}
+
+#HomesectionOne {
+  margin-bottom: 100px;
+  margin-top: 50px;
+  // margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  // border: 2px solid red;
+  // align-content: center;
+  // align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  // gap: 50px;
+  .card {
+    background-color: orange;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    height: 445px;
+    width: 226px;
+    // border: 2px solid red;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding-bottom: 20px;
+    border: none;
+    box-shadow: 0 0 10px red inset;
+    // box-shadow: 0 0 10px blue;
+    // gap: 10px;
+    img {
+      // margin-left: -1px;
+      margin-top: -2px;
+      height: 183px;
+      width: 226px;
+      background-color: #cfcfcf;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      box-shadow: 0 0 10px red inset;
+    }
+    i {
+      color: red;
+    }
+    .nutsVege {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+      height: 60px;
+      gap: 10px;
+
+      // border: 1px solid red;
+      label {
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: center;
+        // align-items: center;
+        // align-content: center;
+        // gap: 20px;
+        .labelnuts {
+          display: flex;
+          flex-direction: row;
+          justify-content: start;
+          align-items: center;
+          align-content: center;
+          gap: 5px;
+        }
+        .labelVeg {
+          display: flex;
+          flex-direction: row;
+          justify-content: start;
+          align-items: center;
+          align-content: center;
+          gap: 5px;
+        }
+      }
+    }
+  }
+  .addToCart {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    height: 90px;
+    width: 150px;
+    // border: 1px solid red;
+    button {
+      width: 150px;
+      height: 30px;
+      background-color: red;
+      color: white;
+      transition: 0.5s;
+      border-radius: 10px;
+      border: none;
+    }
+    button:hover {
+      transform: translate(0, -3px);
+      filter: drop-shadow(0 0 10px red);
+    }
+  }
+}
+
+#cartH1 {
+  // border: 1px yellow solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100px;
+  font-size: 70px;
+}
+
+.info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 64px;
+  width: 100%;
+  padding-inline: 20px;
+  border: 2px solid red;
+  // background-color: orange;
+  .infoLeft {
+    // border: 1px solid green;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+    width: 50%;
+  }
+  .cartRight {
+    // border: 1px solid yellow;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    width: 50%;
+    gap: 30%;
+    padding-left: 35px;
+  }
+}
+
+#CartsectionOne {
+  display: flex;
+  // flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  // gap: 20px;
+
+  .cartProductList {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 140px;
+    // border: 2px solid blue;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid red;
+    padding-inline: 20px;
+    // padding-bottom: 40px;
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: transparent;
+      border: none;
+      color: white;
+      width: 50px;
+      height: 30px;
+      filter: brightness((100%));
+      transition: 0.5s;
+      i {
+        filter: brightness((100%));
+        font-size: 24px;
+        color: red;
+        transition: 0.3s;
+      }
+    }
+    button:hover {
+      transform: translate(0, -3px);
+      filter: drop-shadow(0 0 10px red);
+    }
+    .cartProduct {
+      // border: 1px solid green;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      align-content: center;
+      height: 100px;
+      width: 100%;
+      .cartProductLeft {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        align-content: center;
+        height: 100px;
+        width: 100%;
+        gap: 20px;
+        img {
+          height: 100px;
+          width: 100px;
+        }
+      }
+
+      .cartProductRight {
+        // border: 1px solid yellow;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        align-content: center;
+        height: 100px;
+        width: 100%;
+        // gap: 30%;
+        .qty {
+          // border: 1px solid yellow;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          align-content: center;
+        }
+        .productPrice {
+          // border: 1px solid purple;
+          width: 50%;
+          display: flex;
+          justify-content: space-between;
+        }
+      }
+    }
+  }
+}
+
+// button{
+//   width: 130px;
+//   height: 30px;
+//   background-color: blue;
+//   color: white;
+//   transition: 0.5s;
+//   border-radius: 10px;
+//   border: none;
+// }
+// button:hover {
+//   transform: translate(0, -3px);
+//   filter: drop-shadow(0 0 10px blue);
+// }
+
+.totalPrice {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  align-content: center;
+  gap: 20px;
+  margin-top: 20px;
+  margin-bottom: 100px;
+}
+
+@media (max-width: 800px) {
+  #navOne {
+    display: none;
+  }
+  #menuBtn {
+    display: block;
+  }
+  .info {
+    display: none;
+  }
+  #CartsectionOne {
+    .cartProductList {
+      padding-bottom: 40px;
+      height: 180px;
+      .cartProduct {
+        flex-direction: column;
+        .cartProductLeft {
+          justify-content: center;
+        }
+      }
+    }
+  }
+  #HomesectionOne {
+    justify-content: center;
+    gap: 100px;
+  }
+}
+
+@media (max-width: 780px) {
+  #filterSec {
+    align-items: center;
+  }
+}
